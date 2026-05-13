@@ -17,20 +17,37 @@ Run each check in order. Stop at the first failure, fix it, then continue.
 which upublish
 ```
 
-If missing, install it:
+If missing:
 
 ```sh
 npm install -g @upublish/cli
 ```
 
-### 2. MCP tools available?
+### 2. MCP server registered?
 
 Look for `mcp_upublish_publish` in your available tools.
 
 | State | Action |
 |---|---|
-| Tools available and calls succeed | Skip to step 3 |
-| Tools not found | The MCP server needs to be registered. Tell the user to restart their session after setup completes. |
+| Tools available | Skip to step 3 |
+| Tools not found | Register the MCP server (see below), then tell the user to restart their session |
+
+#### Register MCP server
+
+Add to the project's `.mcp.json` or Claude Code settings:
+
+```json
+{
+  "mcpServers": {
+    "upublish": {
+      "command": "npx",
+      "args": ["-y", "@upublish/cli", "mcp"]
+    }
+  }
+}
+```
+
+After registering, tell the user: "MCP server configured. Restart your session to activate the upublish tools."
 
 ### 3. Authenticated?
 
@@ -41,17 +58,7 @@ cat ~/.upublish/credentials
 | State | Action |
 |---|---|
 | File exists and is non-empty | Done — upublish is ready |
-| File missing or empty | Run auth (see below) |
-
-### Auth
-
-Run the login flow — this opens a browser for Google sign-in:
-
-```sh
-upublish login
-```
-
-This is the only step that needs user interaction. After sign-in, credentials are stored at `~/.upublish/credentials`.
+| File missing or empty | Run `upublish login` (opens browser for Google sign-in) |
 
 ## When everything passes
 
@@ -59,4 +66,4 @@ Tell the user:
 
 > upublish is ready. You can now use `/upublish:ask` to publish sites, list your sites, or manage visibility.
 
-If MCP tools weren't available and this is the first setup, also tell them to restart their session so the tools activate.
+If MCP tools weren't available and this is the first setup, remind them to restart their session first.
