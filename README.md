@@ -4,8 +4,8 @@ Publish static sites to the web instantly via Claude Code.
 
 ## Install
 
-```
-/plugin install omni-ping/upublish.claude
+```sh
+claude plugin install omni-ping/upublish.claude
 ```
 
 ## Usage
