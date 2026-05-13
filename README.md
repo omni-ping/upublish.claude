@@ -1,6 +1,6 @@
-# upublish (Claude Code plugin)
+# upublish (Claude Code)
 
-Publish static sites to the web instantly via Claude Code.
+Creativity at the speed of AI. Our AI companions are great at producing content — now give them a place to help share it.
 
 ## Install
 
@@ -15,5 +15,5 @@ claude plugin install omni-ping/upublish.claude
 
 ## Other platforms
 
-- **Codex / Gemini / others:** Use [upublish.skill](https://github.com/omni-ping/upublish.skill)
+- **Codex:** `npx skills add omni-ping/upublish.skill -g --agent codex`
 - **Standalone CLI:** `npm install -g @omniping/upublish`
