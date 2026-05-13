@@ -20,7 +20,7 @@ which upublish
 If missing:
 
 ```sh
-npm install -g @upublish/cli
+npm install -g @omniping/upublish
 ```
 
 ### 2. MCP server registered?
@@ -41,7 +41,7 @@ Add to the project's `.mcp.json` or Claude Code settings:
   "mcpServers": {
     "upublish": {
       "command": "npx",
-      "args": ["-y", "@upublish/cli", "mcp"]
+      "args": ["-y", "@omniping/upublish", "mcp"]
     }
   }
 }

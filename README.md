@@ -16,4 +16,4 @@ claude plugin install omni-ping/upublish.claude
 ## Other platforms
 
 - **Codex / Gemini / others:** Use [upublish.skill](https://github.com/omni-ping/upublish.skill)
-- **Standalone CLI:** `npm install -g @upublish/cli`
+- **Standalone CLI:** `npm install -g @omniping/upublish`
