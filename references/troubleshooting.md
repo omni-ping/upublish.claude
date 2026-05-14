@@ -2,9 +2,9 @@
 
 ## "MCP tools not found"
 
-The upublish MCP server isn't registered. Follow the bootstrap steps in SKILL.md Step 1 — install bun, run `bun install`, run `upublish login`. Handle this automatically; don't tell the user to run commands.
+The upublish MCP server isn't registered. Run `/upublish:setup` to install the CLI, register the MCP server, and authenticate.
 
-If setup was already run, check `.mcp.json` in the project root for an `upublish` entry under `mcpServers`.
+If setup was already run, check that `mcp_upublish_publish` appears in your available tools. If not, restart your session — the MCP server was registered but not loaded yet.
 
 ## "Not authenticated" or authentication errors
 
